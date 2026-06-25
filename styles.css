@@ -184,56 +184,21 @@ h3 {
   background: var(--sand);
 }
 
-.hero-media figure,
-.gallery-grid figure {
+.hero-image {
   margin: 0;
 }
 
-.hero-media {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(130px, 0.46fr);
-  gap: 12px;
-  align-items: stretch;
-}
-
-.hero-main {
-  min-height: 100%;
-}
-
-.hero-main img {
-  height: 100%;
-  min-height: 520px;
-}
-
-.hero-thumbs {
-  display: grid;
-  gap: 12px;
-}
-
-.hero-thumbs img {
-  aspect-ratio: 1 / 1;
-}
-
-.hero-main img,
-.hero-thumbs img,
-.image-row img,
-.gallery-grid img {
+.hero-image img,
+.media-grid img {
   width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
-.hero-main figcaption,
-.hero-thumbs figcaption {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.hero-thumbs figcaption {
-  margin-top: 6px;
-  font-weight: 750;
+.hero-image img {
+  min-height: 520px;
 }
 
 .trust-band {
@@ -284,7 +249,6 @@ h3 {
 }
 
 .split > div:first-child p:not(.eyebrow),
-.image-row p,
 .contact-copy p {
   color: var(--muted);
   font-size: 17px;
@@ -322,43 +286,43 @@ h3 {
   font-weight: 850;
 }
 
-.image-row {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.82fr) minmax(280px, 0.7fr);
-  gap: clamp(28px, 5vw, 70px);
-  align-items: center;
-  background: #eef0e8;
-}
-
-.gallery {
+.media-services {
   background: var(--moss-dark);
   color: var(--white);
 }
 
-.gallery .eyebrow {
+.media-services .eyebrow {
   color: #f1b289;
 }
 
-.gallery h2 {
+.media-services h2,
+.media-services h3 {
   color: var(--white);
 }
 
-.gallery-grid {
+.media-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.gallery-grid img {
-  aspect-ratio: 4 / 3;
+.media-grid article {
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.media-grid img {
+  border-radius: 0;
   box-shadow: none;
 }
 
-.gallery-grid figcaption {
-  margin-top: 10px;
+.media-grid div {
+  padding: 20px;
+}
+
+.media-grid p {
   color: rgba(255, 255, 255, 0.78);
-  font-size: 14px;
-  font-weight: 750;
 }
 
 .text-link {
@@ -448,28 +412,18 @@ h3 {
 
   .hero,
   .split,
-  .image-row,
   .contact,
   .trust-band,
-  .gallery-grid {
+  .media-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-media {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-main img {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
-  }
-
-  .hero-thumbs {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .hero {
     padding-top: 30px;
+  }
+
+  .hero-image img {
+    min-height: 0;
   }
 
   h1 {
@@ -502,11 +456,4 @@ h3 {
     width: 100%;
   }
 
-  .hero-thumbs {
-    gap: 8px;
-  }
-
-  .hero-thumbs figcaption {
-    font-size: 11px;
-  }
 }
